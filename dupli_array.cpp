@@ -30,17 +30,17 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
   public:
-    vector<int> duplicates(int arr[], int n) {
-        // code here
-         map<int,int> mp;
-    for(int i = 0; i < n; i++)
-        mp[arr[i]]++;
-    vector<int> vec = {};
-    for(auto it : mp)
-        if(it.second > 1)
-            vec.push_back(it.first);
-    if(vec.size()) return vec;
-    return {-1};
+     int a[n]={0};
+        for(int i = 0; i < n; i++){
+            a[arr[i]] += 1;
+        }
+        vector<int> v;
+        for(int i = 0; i < n; i++){
+            if(a[i] > 1) v.push_back(i);
+        }
+        
+        if(v.size() == 0) v.push_back(-1);
+        return v;
     }
 };
 
